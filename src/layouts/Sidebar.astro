@@ -1,0 +1,73 @@
+---
+import Nav from '../components/Nav.astro'
+import NavItem from '../components/NavItem.astro'
+import NavLink from '../components/NavLink.astro'
+
+const { class: className } = Astro.props
+---
+
+<aside
+  data-nav
+  class:list={[
+    'fixed left-0 inset-y-0 -translate-x-full [&[open]]:translate-x-0 lg:translate-x-0 w-full lg:w-72 bg-neutral-100/60 backdrop-blur-md pt-16 z-10 transition-transform duration-300 ease-in-out',
+    className,
+  ]}
+>
+  <div
+    class="w-full h-full lg:border-r border-neutral-300/50 px-5 py-4 overflow-y-auto"
+  >
+    <Nav>
+      <NavItem title="Inicio" open>
+        <NavLink href="/soroban/inicio" label="Inicio" />
+        
+      </NavItem>
+      <NavItem title="Instalación" close>
+        <NavLink href="/instalacion/rust" label="Rust" />
+        <NavLink href="/instalacion/cliente-stellar" label="Cliente Stellar" />
+        <NavLink href="/instalacion/nvm" label="NVM" />
+        <NavLink href="/instalacion/node-js" label="Node Js" />
+        <NavLink href="/instalacion/ide" label="IDE" />
+      </NavItem>
+
+      <NavItem title="Cliente Stellar" close>
+        <NavLink href="/cliente-stellar/primer-paso" label="Primer paso" />
+        <NavLink href="/cliente-stellar/segundo-paso" label="Segundo paso" />
+      </NavItem>
+
+      <NavItem title="Contenido Soroban" close>
+        <NavLink href="/soroban/datos-primitivos" label="Tipos de datos primitivos" />
+        <NavLink href="/soroban/string" label="String" />
+        <NavLink href="/soroban/sentencias-condicionales" label="Sentencias condicionales" />
+        <NavLink href="/soroban/estructuras-de-datos" label="Estructuras de datos" />
+        <NavLink href="/soroban/loops" label="Loops" />
+        <NavLink href="/soroban/funciones" label="Funciones" />
+        <NavLink href="/soroban/nft" label="NFT" />
+        <NavLink href="/soroban/pruebas" label="Pruebas" />
+      </NavItem>
+
+      <NavItem title="Ejemplos" close>
+        <NavLink href="/ejemplos/hello-world" label="Hello World" />
+        <NavLink href="/ejemplos/get-set-hello-world" label="Get set hello world" /> 
+        <NavLink href="/ejemplos/counter" label="Counter" /> 
+      </NavItem>
+
+      <NavItem title="Components" close>
+        <NavLink href="/components/accordion" label="Accordion" />
+        <NavLink href="/components/button" label="Button" />
+        <NavLink href="/components/checkbox" label="Checkbox" />
+        <NavLink href="/components/icon" label="Icon" />
+        <NavLink href="/components/input" label="Input" />
+        <NavLink href="/components/modal" label="Modal" />
+        <NavLink href="/components/radio" label="Radio" />
+        <NavLink href="/components/select" label="Select" />
+        <NavLink href="/components/switch" label="Switch" />
+        <NavLink href="/components/tab" label="Tab" />
+        <NavLink href="/components/textarea" label="Textarea" />
+        <NavLink href="/components/theme-switch" label="Theme Switch" />
+      </NavItem>
+      <NavItem title="Resources" open>
+        <NavLink href="/resources/available-icons" label="Available Icons" />
+      </NavItem>
+    </Nav>
+  </div>
+</aside>

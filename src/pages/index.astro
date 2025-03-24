@@ -1,0 +1,39 @@
+---
+import { Button } from 'free-astro-components'
+import Code from '../components/Code.astro'
+import CTA from '../sections/CTA.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import Hero from '../sections/Hero.astro'
+import Intro from '../sections/Intro.astro'
+import Layout from '../layouts/Layout.astro'
+import Sidebar from '../layouts/Sidebar.astro'
+---
+
+<Layout title="Stellar en Español">
+  <Sidebar class="lg:hidden" />
+  <Header />
+  <main>
+    <Hero
+      align="center"
+      title="Stellar<strong> En Español</strong>"
+      description="Bienvenido a un sitio donde iremos poniendo recursos y guias paso a paso para hacer contratos inteligentes y aplicaciones web con Soroban "
+    >
+      <div>
+        <Button href="/soroban/inicio" label="Cómo Empezar?" />
+      </div>
+      <div>
+        <!-- <Code code="npm install free-astro-components" /> -->
+      </div>
+    </Hero>
+    <Intro />
+    <CTA
+      align="center"
+      title="Aprende a usar Soroban con <strong>Ejemplos</strong>"
+      description="Explore my collection of Stellar en Español and start building your next project today."
+    >
+      <Button href="/ejemplos/hello-world" label="Ver Ejemplos" />
+    </CTA>
+  </main>
+  <Footer />
+</Layout>
