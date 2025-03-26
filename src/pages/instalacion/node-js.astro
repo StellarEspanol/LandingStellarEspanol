@@ -26,9 +26,11 @@ import Prose from '../../components/Prose.astro'
 import Sidebar from '../../layouts/Sidebar.astro'
 import Text from '../../components/Text.astro'
 import Table from '../../components/Table.astro'
+import Link from '../../components/Link.astro'
+import { Node } from '../../data/node-js.ts'
 ---
 
-<Layout title="Stellar en Español - Button">
+<Layout title="Stellar en Español - NODE JS">
   <Header />
   <Sidebar />
   <Content>
@@ -39,152 +41,43 @@ import Table from '../../components/Table.astro'
           level={1}
           gradient
           class="inline-block"
-          text="Button"
+          text="🌐 Node Js"
         />
         <Prose>
           <Text>
-            The button component is a versatile UI element for triggering
-            actions or navigating through your application. Below are the
-            available configurations and usage examples.
+            <code>Node Js</code> es un entorno de ejecución de JavaScript basado
+            en el motor V8 de Chrome, que permite desarrollar aplicaciones escalables
+            del lado del servidor con un modelo asíncrono y no bloqueante. Utiliza
+            un solo hilo con eventos para manejar múltiples conexiones de manera
+            eficiente, es altamente escalable y cuenta con un extenso ecosistema
+            de paquetes a través de npm. Es ideal para APIs, microservicios, aplicaciones
+            en tiempo real y servidores web.
+
+            <Text
+              >Para nosotros es relevante la instalación de nodejs para la
+              interacción web con los contratos de la red Stellar</Text
+            >
           </Text>
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Import" />
-          <Text>
-            To use the button component, first import it into your project:
-          </Text>
-          <CodeBlock lang="astro" code={importCode} />
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Usage" />
-          <Text>
-            To button component can be easily added to your project. Below are
-            various use cases.
-          </Text>
-          <Heading level={3} text="Basic Usage" />
-          <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
-            <TabItem active>
-              <Preview>
-                <ButtonAc label="Button" />
-              </Preview>
-            </TabItem>
-            <TabItem>
-              <CodeBlock lang="astro" code={basicUsageCode} />
-            </TabItem>
-          </Tab>
-          <Heading level={3} text="Disabled" />
-          <Text>
-            To disable the button, use the <code>disabled</code> prop.
-          </Text>
-          <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
-            <TabItem active>
-              <Preview>
-                <div class="flex items-center flex-wrap gap-4">
-                  <ButtonAc label="Button disabled" disabled />
-                </div>
-              </Preview>
-            </TabItem>
-            <TabItem>
-              <CodeBlock lang="astro" code={disabledCode} />
-            </TabItem>
-          </Tab>
-          <Heading level={3} text="Sizes" />
-          <Text>
-            The component supports two sizes: <code>medium</code> and <code
-              >small</code
-            >.
-          </Text>
-          <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
-            <TabItem active>
-              <Preview>
-                <div class="flex items-center flex-wrap gap-4">
-                  <ButtonAc label="Buton small" size="small" />
-                  <ButtonAc label="Button medium" size="medium" />
-                </div>
-              </Preview>
-            </TabItem>
-            <TabItem>
-              <CodeBlock lang="astro" code={sizesCode} />
-            </TabItem>
-          </Tab>
-          <Heading level={3} text="Variants" />
-          <Text>
-            Choose from four visual variants to match different design contexts:
-            <code>'primary' | 'secondary' | 'dark' | 'light'</code>.
-          </Text>
-          <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
-            <TabItem active>
-              <Preview>
-                <div class="flex items-center flex-wrap gap-4">
-                  <ButtonAc label="Button primary" variant="primary" />
-                  <ButtonAc label="Button secondary" variant="secondary" />
-                  <ButtonAc label="Button dark" variant="dark" />
-                  <ButtonAc label="Button light" variant="light" />
-                </div>
-              </Preview>
-            </TabItem>
-            <TabItem>
-              <CodeBlock lang="astro" code={variantsCode} />
-            </TabItem>
-          </Tab>
-          <Heading level={3} text="With Icon" />
-          <Text>
-            You can add an icon to the button, either on the left or right side
-            of the label.
-          </Text>
-          <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
-            <TabItem active>
-              <Preview>
-                <div class="flex items-center flex-wrap gap-4">
-                  <ButtonAc
-                    label="Button"
-                    icon="arrow-left"
-                    iconPosition="left"
-                  />
-                  <ButtonAc
-                    label="Button"
-                    icon="arrow-right"
-                    iconPosition="right"
-                  />
-                </div>
-              </Preview>
-            </TabItem>
-            <TabItem>
-              <CodeBlock lang="astro" code={withIconCode} />
-            </TabItem>
-          </Tab>
-          <Heading level={3} text="Icon Only" />
-          <Text>
-            For an icon-only button, omit the <code>label</code> prop.
-          </Text>
-          <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
-            <TabItem active>
-              <Preview>
-                <div class="flex items-center flex-wrap gap-4">
-                  <ButtonAc icon="star" />
-                </div>
-              </Preview>
-            </TabItem>
-            <TabItem>
-              <CodeBlock lang="astro" code={iconOnlyCode} />
-            </TabItem>
-          </Tab>
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Custom Styles" />
-          <Text>
-            The button component offers various CSS variables that you can
-            customize to match your design needs. Below are the available
-            variables and an example of how to use them:
-          </Text>
-          <Heading level={3} text="Available Variables" />
-          <CodeBlock lang="css" code={customVariablesCode} />
-          <Heading level={3} text="Example Customization" />
-          <Text>
-            To customize the button styles, you can override these variables in
-            your CSS:
-          </Text>
-          <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
+
+          <Prose>
+            <Heading level={4} text="Instalación" />
+            <Text>
+              Nos dirijimos a la <Link href="https://nodejs.org/es/download">
+                página oficial de NodeJs</Link
+              > para ver la última version LTS
+            </Text>
+            <Text>Abrimos la terminal y ejecutamos:</Text>
+            <CodeBlock lang="astro" code={Node} />
+
+            <Text>Está es la última version el 15 de Marzo de 2025</Text>
+
+            <Text>
+              Fácil no? asi podemos instalar y gestionar varias versiones de
+              Node js mucho más fácil 😊
+            </Text>
+          </Prose>
+
+          <!-- <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
             <TabItem active>
               <Preview>
                 <div class="flex items-center flex-wrap gap-4">
@@ -195,51 +88,22 @@ import Table from '../../components/Table.astro'
             <TabItem>
               <CodeBlock lang="astro" code={customStylesCode} />
             </TabItem>
-          </Tab>
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Props" />
-          <Table head={tableHead} rows={tableRows} />
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Accessibility" />
-          <List>
-            <ListItem>
-              <Text>
-                <strong>Keyboard Accessibility</strong>: Ensure that all buttons
-                are reachable and operable using a keyboard. Focus should be
-                clearly visible, and buttons should respond to keyboard events.
-              </Text>
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>ARIA Attributes</strong>: Use appropriate ARIA roles and
-                attributes to convey the button's purpose and state to assistive
-                technologies.
-              </Text>
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>Visual Clarity</strong>: Buttons should have sufficient
-                contrast against their background to be easily distinguishable.
-              </Text>
-            </ListItem>
-          </List>
+          </Tab> -->
         </Prose>
       </Article>
     </section>
   </Content>
-</Layout>
 
-<style>
-  .custom-button {
-    --ac-btn-border-radius: 999px;
-    --ac-btn-font-weight: 600;
-    border-width: 0;
-    background-image: linear-gradient(
-      90deg,
-      rgb(var(--ac-primary)) 0%,
-      rgb(var(--ac-secondary)) 100%
-    );
-  }
-</style>
+  <style>
+    .custom-button {
+      --ac-btn-border-radius: 999px;
+      --ac-btn-font-weight: 600;
+      border-width: 0;
+      background-image: linear-gradient(
+        90deg,
+        rgb(var(--ac-primary)) 0%,
+        rgb(var(--ac-secondary)) 100%
+      );
+    }
+  </style>
+</Layout>

@@ -7,74 +7,21 @@ import Article from '../../components/Article.astro'
 import Prose from '../../components/Prose.astro'
 import Heading from '../../components/Heading.astro'
 import Text from '../../components/Text.astro'
-import List from '../../components/List.astro'
-import ListItem from '../../components/ListItem.astro'
 import CodeBlock from '../../components/CodeBlock.astro'
-
-const colorVariables = `
-:root {
-  --ac-transparent: transparent;
-  --ac-current: currentColor;
-  --ac-white: 255, 255, 255;
-  --ac-primary: 64, 93, 255;
-  --ac-secondary: 98, 251, 213;
-  --ac-dark: 22, 22, 22;
-  --ac-gray-100: 232, 232, 232;
-  --ac-gray-200: 185, 185, 185;
-  --ac-gray-300: 139, 139, 139;
-  --ac-gray-400: 92, 92, 92;
-  --ac-gray-500: 45, 45, 45;
-  --ac-success: 0, 255, 0;
-  --ac-warning: 255, 255, 0;
-  --ac-danger: 255, 0, 0;
-}
-`
-const lightModeVariables = `
-.light,
-:root,
-[data-theme='light'] {
-  color-scheme: light;
-  --ac-color-100: var(--ac-white);
-  --ac-color-200: var(--ac-gray-100);
-  --ac-color-300: var(--ac-gray-200);
-  --ac-color-400: var(--ac-gray-300);
-  --ac-color-500: var(--ac-gray-400);
-  --ac-color-600: var(--ac-gray-500);
-  --ac-color-700: var(--ac-dark);
-}
-`
-const darkModeVariables = `
-.dark,
-[data-theme='dark'] {
-  color-scheme: dark;
-  --ac-color-100: var(--ac-dark);
-  --ac-color-200: var(--ac-gray-500);
-  --ac-color-300: var(--ac-gray-400);
-  --ac-color-400: var(--ac-gray-300);
-  --ac-color-500: var(--ac-gray-200);
-  --ac-color-600: var(--ac-gray-100);
-  --ac-color-700: var(--ac-white);
-}
-`
-const examplesCodes = `
-body {
-  background-color: rgb(var(--ac-color-100));
-  color: rgb(var(--ac-color-700));
-}
-
-.card {
-  background-color: rgb(var(--ac-color-200));
-  border: 1px solid rgb(var(--ac-color-300));
-}
-
-.button {
-  background-color: rgb(var(--ac-primary));
-  color: rgb(var(--ac-white));
-}
-`
+import {
+  Paso1,
+  Paso2,
+  Paso3,
+  Paso4,
+  Paso5,
+  Paso6,
+  Paso7,
+} from '../../data/cliente-stellar'
+import Link from '../../components/Link.astro'
+import Warning from '../../components/Warning.astro'
 ---
 
-<Layout title="Stellar en Español - Colors">
+<Layout title="Stellar en Español - Cliente Stellar">
   <Header />
   <Sidebar />
   <Content>
@@ -85,81 +32,74 @@ body {
           level={1}
           gradient
           class="inline-block"
-          text="Colors"
+          text="☄️ Cliente Stellar"
         />
         <Prose>
           <Text>
-            This section describes the CSS variables that define the color
-            palette used in the components. It also explains how light and dark
-            modes are implemented to enhance user experience.
+            El cliente de Stellar es super importante en la escritura de
+            contratos en Stellar, ya que se encarga de la creación de la
+            estructura básica y archivos, su compilación, despliegue y pruebas
+            respectivas.
           </Text>
         </Prose>
         <Prose>
-          <Heading level={2} text="Color Variables" />
-          <Heading level={3} text="Base Variables" />
+          <Heading level={2} text="Instalación" />
+          <Heading level={4} text="MAC " />
+          <Text> Se ejecuta el siguiente comando en la terminal </Text>
+          <CodeBlock lang="css" code={Paso1} />
+
+          <Heading level={2} text="Linux" />
+
           <Text>
-            These variables are used to define primary, secondary, dark, and
-            neutral colors. They are applied consistently across the project to
-            maintain a coherent visual identity.
+            Vamos a la pagina de <Link
+              href="https://github.com/stellar/stellar-cli/releases"
+              >releases</Link
+            >
           </Text>
-          <Heading level={4} text="Variables" />
-          <CodeBlock lang="css" code={colorVariables} />
+          <Warning
+            type="warning"
+            title="busca el binario corresponidente a la  arquitectura de tu ordenador [arch64 o x86_64]"
+          />
+
+          <CodeBlock lang="css" code={Paso2} />
+          <Text>Descomprime el archivo</Text>
+          <CodeBlock lang="css" code={Paso3} />
         </Prose>
         <Prose>
-          <Heading level={2} text="Color Modes" />
-          <Text>
-            To enhance user experience, we use light and dark color modes that
-            adjust automatically based on user preferences or system settings.
-            This is achieved using specific classes and data attributes to
-            determine the current theme.
+          <Text
+            >Crea un alias con el binario para que se ejecute en terminal con el
+            comando stellar
           </Text>
-          <Heading level={3} text="Light Mode" />
-          <CodeBlock lang="css" code={lightModeVariables} />
-          <List>
-            <ListItem>
-              <Text>
-                <strong>Description</strong>: In light mode, we use lighter
-                colors for backgrounds and primary elements, while text and
-                prominent elements are darker.
-              </Text>
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>Color Variables</strong>: Variables <code
-                  >--ac-color-100</code
-                > to <code>--ac-color-700</code> are mapped to lighter colors, ending
-                with <code>--ac-dark</code> for text and important elements.
-              </Text>
-            </ListItem>
-          </List>
-          <Heading level={3} text="Dark Mode" />
-          <CodeBlock lang="css" code={darkModeVariables} />
-          <List>
-            <ListItem>
-              <Text>
-                <strong>Description</strong>: In dark mode, we use darker colors
-                for backgrounds and lighter colors for text and highlighted
-                elements, reducing visual fatigue in low-light environments.
-              </Text>
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>Color Variables</strong>: Variables <code
-                  >--ac-color-100</code
-                > to <code>--ac-color-700</code> are inverted compared to light mode,
-                starting with <code>--ac-dark</code> and ending with <code
-                  >--ac-white</code
-                > for text and important elements.
-              </Text>
-            </ListItem>
-          </List>
+          <CodeBlock lang="css" code={Paso4} />
+          <Text>Comprueba que se instaló correctamente</Text>
+          <CodeBlock lang="css" code={Paso5} />
         </Prose>
         <Prose>
-          <Heading level={2} text="Usage Examples" />
-          <Heading level={3} text="General Styles" />
-          <CodeBlock lang="css" title="css" code={examplesCodes} />
+          <Heading level={3} text="Windows" />
+
+          <CodeBlock lang="css" code={Paso6} />
+          <Text
+            >Para los diferentes sistemas operativos también se puede ir al
+            <Link href="https://github.com/stellar/stellar-cli/releases/">
+              repositirio de github
+            </Link> y bajar de allí los últimos ejecutables</Text
+          >
+          <Text
+            >Una vez instalado en la terminal ejecutamos el comando <code
+              >stellar</code
+            > ( en la terminal).</Text
+          >
         </Prose>
+
+        <CodeBlock lang="css" code={Paso7} />
+
+        <img
+          src="https://soroban-en-espanol.gitbook.io/~gitbook/image?url=https%3A%2F%2F4030095675-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FtbyfkjBGlvJb3cEGvvm8%252Fuploads%252FPmKyXOU2utpYauP8mivD%252Fimage.png%3Falt%3Dmedia%26token%3Df6ede047-9310-48f2-befc-ae501100d425&width=768&dpr=4&quality=100&sign=388ac390&sv=2"
+          alt="Stellar"
+        />
       </Article>
+
+      <Prose />
     </section>
   </Content>
 </Layout>

@@ -1,28 +1,16 @@
 ---
-import {
-  basicUsageCode,
-  statesCode,
-  importCode,
-  tableHead,
-  tableRows,
-} from '../../data/radio.ts'
-import { Radio as RadioAc, Tab, TabItem } from 'free-astro-components'
 import Article from '../../components/Article.astro'
-import CodeBlock from '../../components/CodeBlock.astro'
 import Content from '../../layouts/Content.astro'
 import Header from '../../components/Header.astro'
 import Heading from '../../components/Heading.astro'
 import Layout from '../../layouts/Layout.astro'
-import List from '../../components/List.astro'
-import ListItem from '../../components/ListItem.astro'
-import Preview from '../../components/Preview.astro'
 import Prose from '../../components/Prose.astro'
 import Sidebar from '../../layouts/Sidebar.astro'
 import Text from '../../components/Text.astro'
-import Table from '../../components/Table.astro'
+import Link from '../../components/Link.astro'
 ---
 
-<Layout title="Stellar en Español - Radio">
+<Layout title="Stellar en Español - IDE">
   <Header />
   <Sidebar />
   <Content>
@@ -33,87 +21,33 @@ import Table from '../../components/Table.astro'
           level={1}
           gradient
           class="inline-block"
-          text="Radio"
+          text="✏️ Visual studio code"
         />
         <Prose>
           <Text>
-           Instalación IDE
+            Visual studio code es el editor por excelencia para los desarrollos
+            de contratos y programación en general
           </Text>
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Import" />
+          <Heading level={4} text="Descarga del VS code" />
           <Text>
-            To use the radio component, first import it into your project:
+            Vamoa a la <Link href="https://code.visualstudio.com/">
+              pagina oficial de Visual studio code
+            </Link> para descargar la version mas reciente
           </Text>
-          <CodeBlock lang="astro" code={importCode} />
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Usage" />
-          <Text>
-            Here’s how you can use the radio component in your Astro project:
-          </Text>
-          <Heading level={3} text="Basic Usage" />
-          <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
-            <TabItem active>
-              <Preview>
-                <RadioAc label="Radio" />
-              </Preview>
-            </TabItem>
-            <TabItem>
-              <CodeBlock lang="astro" code={basicUsageCode} />
-            </TabItem>
-          </Tab>
-          <Heading level={3} text="States" />
-          <Text>
-            The component supports different states to indicate whether it is
-            selected or unselected.
-          </Text>
-          <Tab tabs={[{ label: 'Preview', active: true }, { label: 'Code' }]}>
-            <TabItem active>
-              <Preview>
-                <div class="flex items-center flex-wrap gap-4">
-                  <RadioAc label="Radio unselected" />
-                  <RadioAc label="Radio selected" checked />
-                  <RadioAc label="Radio unselected disabled" disabled />
-                  <RadioAc label="Radio selected disabled" checked disabled />
-                  <RadioAc label="Radio error" error />
-                </div>
-              </Preview>
-            </TabItem>
-            <TabItem>
-              <CodeBlock lang="astro" code={statesCode} />
-            </TabItem>
-          </Tab>
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Props" />
-          <Table head={tableHead} rows={tableRows} />
-        </Prose>
-        <Prose>
-          <Heading level={2} text="Accessibility" />
-          <List>
-            <ListItem>
-              <Text>
-                <strong>Keyboard Accessibility</strong>: Ensure that the radio
-                button can be toggled using keyboard interactions (e.g., Arrow
-                keys for navigation and Space key for selection).
-              </Text>
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>ARIA Attributes</strong>: Use <code>aria-checked</code> to
-                indicate the state of the radio button and <code
-                  >aria-disabled</code
-                > for the disabled state.
-              </Text>
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>Labeling</strong>: Ensure that each radio button has a
-                label associated with it for screen readers.
-              </Text>
-            </ListItem>
-          </List>
+
+          <Heading level={4} text="Instalación de plugins útiles" />
+          <Link href="https://rust-analyzer.github.io/">
+            <img
+              src="https://soroban-en-espanol.gitbook.io/~gitbook/image?url=https%3A%2F%2F4030095675-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FtbyfkjBGlvJb3cEGvvm8%252Fuploads%252Fj4gz57tmOAB6PPCA8eH6%252Fimage.png%3Falt%3Dmedia%26token%3D2246fb6b-1217-446a-ad26-337786263b5f&width=768&dpr=1&quality=100&sign=d532092b&sv=2"
+              alt="plugins"
+            />
+          </Link>
+          <Link href="https://github.com/dustypomerleau/rust-syntax">
+            <img
+              src="https://soroban-en-espanol.gitbook.io/~gitbook/image?url=https%3A%2F%2F4030095675-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FtbyfkjBGlvJb3cEGvvm8%252Fuploads%252FgpYgQ0aNoMStahzVfrdF%252Fimage.png%3Falt%3Dmedia%26token%3D903c07bc-8dce-4ac0-aa5d-00a7fdd966a9&width=768&dpr=1&quality=100&sign=ebb05a45&sv=2"
+              alt="plugins"
+            />
+          </Link>
         </Prose>
       </Article>
     </section>

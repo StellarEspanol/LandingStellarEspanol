@@ -10,13 +10,22 @@ import Text from '../../components/Text.astro'
 import List from '../../components/List.astro'
 import ListItem from '../../components/ListItem.astro'
 import CodeBlock from '../../components/CodeBlock.astro'
-import { RustLinux, Paso3Rust, Paso4Rust, Paso5Rust, Paso6Rust, Paso7Rust, Paso8Rust, Paso9Rust, Paso10Rust } from '../../data/rust.ts'
+import {
+  RustLinux,
+  Paso3Rust,
+  Paso4Rust,
+  Paso5Rust,
+  Paso6Rust,
+  Paso7Rust,
+  Paso8Rust,
+  Paso9Rust,
+  Paso10Rust,
+} from '../../data/rust.ts'
 
 import Link from '../../components/Link.astro'
-
 ---
 
-<Layout title="Stellar en Español - Colors">
+<Layout title="Stellar en Español - Rust">
   <Header />
   <Sidebar />
   <Content>
@@ -30,97 +39,119 @@ import Link from '../../components/Link.astro'
           text=" 🦀 Rust"
         />
         <Prose>
-         
+          <Text
+            >Rust es el lenguaje de propósito general en el cual se escriben los
+            contratos para la red de Stellar a continuación un paso a paso para
+            su instalación.</Text
+          >
 
-          <Text>Rust es el lenguaje de propósito general en el cual se escriben los contratos para la red de Stellar a continuación un paso a paso para su instalación.</Text>
-        
-        <Text>Para la instalación de rust, dirigirse a este enlace: <Link href="https://www.rust-lang.org/" target="_blank">Rust</Link></Text>
-          
-
+          <Text
+            >Para la instalación de rust, dirigirse a este enlace: <Link
+              href="https://www.rust-lang.org/"
+              target="_blank">Rust</Link
+            ></Text
+          >
         </Prose>
         <Prose>
           <Heading level={3} text="Instalación en macOS y Linux" />
 
           <Heading level={4} text="Abrir la Terminal" />
 
-       <Text>Abre tu aplicación de terminal (Terminal.app en macOS o la terminal de tu distribución Linux).</Text>
+          <Text
+            >Abre tu aplicación de terminal (Terminal.app en macOS o la terminal
+            de tu distribución Linux).</Text
+          >
           <Text>
-       
-          <Heading level={4} text="Descargar e instalar Rust con rustup" />
-          <CodeBlock lang="css" code={RustLinux} />
-        </Prose>
-        <Prose>
-          <Heading level={4} text="Configurar el entorno" />
-          <Text>
-            Una vez finalizada la instalación, cierra y vuelve a abrir la terminal o ejecuta:
+            <Heading level={4} text="Instalar Rust con rustup" />
+            <CodeBlock lang="css" code={RustLinux} />
           </Text>
-          <CodeBlock lang="css" code={Paso3Rust} />
-          <Text>Esto garantiza que el directorio de Cargo (donde se instalan las herramientas, por ejemplo, <code >rustc</code>, <code> cargo</code> y <code>rustup</code>) se añada a tu variable de entorno <code>PATH</code>.
-            
-          </Text>
-          <Heading level={4} text="Verificar la instalación" />
-          <Text>Para verificar la instalación, ejecuta:</Text>
-          <CodeBlock lang="css" code={Paso4Rust} />
-          
-          <Heading level={4} text="Agregamos el siguiente paquete" />
-          <CodeBlock lang="css" code={Paso5Rust} />
+          <Prose>
+            <Heading level={4} text="Configurar el entorno" />
+            <Text>
+              Una vez finalizada la instalación, cierra y vuelve a abrir la
+              terminal o ejecuta:
+            </Text>
+            <CodeBlock lang="css" code={Paso3Rust} />
+            <Text
+              >Esto garantiza que el directorio de Cargo (donde se instalan las
+              herramientas, por ejemplo, <code>rustc</code>, <code> cargo</code>
+              y <code>rustup</code>) se añada a tu variable de entorno <code
+                >PATH</code
+              >.
+            </Text>
+            <Heading level={4} text="Verificar la instalación" />
+            <Text>Para verificar la instalación, ejecuta:</Text>
+            <CodeBlock lang="css" code={Paso4Rust} />
 
+            <Heading level={4} text="Agregamos el paquete" />
+            <CodeBlock lang="css" code={Paso5Rust} />
 
-          <Heading level={4} text="Instalar un compilador de C (si es necesario)" />
-          <Text>Rust requiere un enlazador para compilar correctamente:</Text>
-          
-          <List>
-            <ListItem>
-              <Text>
-                <strong>
-                  En macOS</strong>: Instala las herramientas de línea de comandos de Xcode
-              </Text>
-              <CodeBlock lang="css" code={Paso6Rust} />
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>Linux: Debian - Ubuntu </strong>
-                
-              </Text>
-              <CodeBlock lang="css" code={Paso7Rust} />
-            </ListItem>
+            <Heading
+              level={4}
+              text="Instalar un compilador de C"
+            />
+            <Text>Rust requiere un enlazador para compilar correctamente:</Text>
 
-            <ListItem>
-              <Text>
-                <strong>Linux: Fedora</strong>
-               
-              </Text>
-              <CodeBlock lang="css" code={Paso8Rust} />
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>Linux: Arch Linux</strong>
-               
-              </Text>
-              <CodeBlock lang="css" code={Paso9Rust} />
-            </ListItem>
-          </List>
+            <List>
+              <ListItem>
+                <Text>
+                  <strong> En macOS</strong>: Instala las herramientas de línea
+                  de comandos de Xcode
+                </Text>
+                <CodeBlock lang="css" code={Paso6Rust} />
+              </ListItem>
+              <ListItem>
+                <Text>
+                  <strong>Linux: Debian - Ubuntu </strong>
+                </Text>
+                <CodeBlock lang="css" code={Paso7Rust} />
+              </ListItem>
 
+              <ListItem>
+                <Text>
+                  <strong>Linux: Fedora</strong>
+                </Text>
+                <CodeBlock lang="css" code={Paso8Rust} />
+              </ListItem>
+              <ListItem>
+                <Text>
+                  <strong>Linux: Arch Linux</strong>
+                </Text>
+                <CodeBlock lang="css" code={Paso9Rust} />
+              </ListItem>
+            </List>
+          </Prose>
 
+          <Prose>
+            <Heading level={3} text="Instalación en Windows" />
+            <Heading level={4} text="Descargar el instalador" />
+            <Text
+              >Visita la <Link href="https://www.rust-lang.org/"
+                >página oficial de Rust</Link
+              > y descarga el instalador para Windows (rustup-init.exe). Elige la
+              versión de 32 o 64 bits según tu sistema.</Text
+            >
 
-        </Prose>
-        <Prose>
-          <Heading level={3} text="Instalación en Windows" />
-          <Heading level={4} text="Descargar el instalador" />
-          <Text>Visita la <Link href="https://www.rust-lang.org/">página oficial de Rust</Link> y descarga el instalador para Windows (rustup-init.exe). Elige la versión de 32 o 64 bits según tu sistema.</Text>
-          
-          <Heading level={4} text=" Ejecutar el instalador" />
-          <Text>Ejecuta el archivo descargado y sigue las instrucciones en pantalla. Durante la instalación, es posible que se te pida instalar las Visual Studio C++ Build Tools (necesarias para compilar Rust en Windows).</Text>
-         
-         <img src="https://soroban-en-espanol.gitbook.io/~gitbook/image?url=https%3A%2F%2F4030095675-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FtbyfkjBGlvJb3cEGvvm8%252Fuploads%252FtQckmd1B9Gov4SttF2iR%252Fimage.png%3Falt%3Dmedia%26token%3D931a707a-4b48-495b-8494-68907a03c723&width=768&dpr=1&quality=100&sign=99b7dd8c&sv=2" alt="rust1" />
-         
-         <Heading level={4} text=" Verificar la instalación" />
-         <Text>Abre una terminal (CMD o PowerShell) y ejecuta:</Text>
-         <CodeBlock lang="css" code={Paso4Rust} />
+            <Heading level={4} text=" Ejecutar el instalador" />
+            <Text
+              >Ejecuta el archivo descargado y sigue las instrucciones en
+              pantalla. Durante la instalación, es posible que se te pida
+              instalar las Visual Studio C++ Build Tools (necesarias para
+              compilar Rust en Windows).</Text
+            >
 
-         <Heading level={4} text="Agregamos los siguientes paquetes" />
-         <CodeBlock lang="css" code={Paso10Rust} />
-         
+            <img
+              src="https://soroban-en-espanol.gitbook.io/~gitbook/image?url=https%3A%2F%2F4030095675-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FtbyfkjBGlvJb3cEGvvm8%252Fuploads%252FtQckmd1B9Gov4SttF2iR%252Fimage.png%3Falt%3Dmedia%26token%3D931a707a-4b48-495b-8494-68907a03c723&width=768&dpr=1&quality=100&sign=99b7dd8c&sv=2"
+              alt="rust1"
+            />
+
+            <Heading level={4} text=" Verificar la instalación" />
+            <Text>Abre una terminal (CMD o PowerShell) y ejecuta:</Text>
+            <CodeBlock lang="css" code={Paso4Rust} />
+
+            <Heading level={4} text="Agregamos los siguientes paquetes" />
+            <CodeBlock lang="css" code={Paso10Rust} />
+          </Prose>
         </Prose>
       </Article>
     </section>

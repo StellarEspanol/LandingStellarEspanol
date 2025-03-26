@@ -1,4 +1,7 @@
 ---
+import { Icon as IconAc } from 'free-astro-components'
+import { icons } from '../../data/icons.ts'
+import { iconsCategories } from '../../data/icons-categories.ts'
 import {
   basicUsageCode,
   customVariablesCode,
@@ -32,9 +35,13 @@ import Prose from '../../components/Prose.astro'
 import Sidebar from '../../layouts/Sidebar.astro'
 import Text from '../../components/Text.astro'
 import Table from '../../components/Table.astro'
+
+const exampleCode = `
+<Icon icon="star" class="custom-class" />
+`
 ---
 
-<Layout title="Stellar en Español - Accordion">
+<Layout title="Stellar en Español - Primer paso">
   <Header />
   <Sidebar />
   <Content>
@@ -45,19 +52,32 @@ import Table from '../../components/Table.astro'
           level={1}
           gradient
           class="inline-block"
-          text="Accordion"
+          text="Primer Paso"
         />
         <Prose>
           <Text>
-            The Accordion component is a flexible container that organizes
-            expandable content items. It can be used to group multiple
-            AccordionItem components and offers various style variants.
+            El cliente de Stellar es super importante en la escritura de contratos en Stellar, ya que se encarga de la creación de la estructura básica y archivos, su compilación, despliegue y pruebas respectivas.
+          </Text>
+          En esta primera pare veremos lo siguiente:
+          <Text>
+            <List>
+              <ListItem>
+                Creación de una cuenta (identidad)</ListItem>
+              <ListItem>Obtención de la llave pública (address)</ListItem>
+              <ListItem>Consultar el saldo</ListItem>
+              <ListItem>Envio de lumens a otra cuenta</ListItem>
+            </List>
           </Text>
         </Prose>
+
+        <CodeBlock lang="astro" code={exampleCode} />
+
         <Prose>
-          <Heading level={2} text="Import" />
+          <Heading level={4} text="Creación de una cuenta (identidad)" />
+          <Text>La identidad es un alias , que nos sirve para manejar la cuenta generada de una forma mucho más sencilla.
+          </Text>
           <Text>
-            To use the Accordion component, first import it into your project:
+            Para este caso por ejemplo vamos a generar una identidad llamada developer , ya dejemos descansar a Bob y Alice 😅
           </Text>
           <CodeBlock lang="astro" code={importCode} />
         </Prose>
