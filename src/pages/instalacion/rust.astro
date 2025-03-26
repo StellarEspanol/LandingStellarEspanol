@@ -10,68 +10,10 @@ import Text from '../../components/Text.astro'
 import List from '../../components/List.astro'
 import ListItem from '../../components/ListItem.astro'
 import CodeBlock from '../../components/CodeBlock.astro'
+import { RustLinux, Paso3Rust, Paso4Rust, Paso5Rust, Paso6Rust, Paso7Rust, Paso8Rust, Paso9Rust, Paso10Rust } from '../../data/rust.ts'
 
-const colorVariables = `
-:root {
-  --ac-transparent: transparent;
-  --ac-current: currentColor;
-  --ac-white: 255, 255, 255;
-  --ac-primary: 64, 93, 255;
-  --ac-secondary: 98, 251, 213;
-  --ac-dark: 22, 22, 22;
-  --ac-gray-100: 232, 232, 232;
-  --ac-gray-200: 185, 185, 185;
-  --ac-gray-300: 139, 139, 139;
-  --ac-gray-400: 92, 92, 92;
-  --ac-gray-500: 45, 45, 45;
-  --ac-success: 0, 255, 0;
-  --ac-warning: 255, 255, 0;
-  --ac-danger: 255, 0, 0;
-}
-`
-const lightModeVariables = `
-.light,
-:root,
-[data-theme='light'] {
-  color-scheme: light;
-  --ac-color-100: var(--ac-white);
-  --ac-color-200: var(--ac-gray-100);
-  --ac-color-300: var(--ac-gray-200);
-  --ac-color-400: var(--ac-gray-300);
-  --ac-color-500: var(--ac-gray-400);
-  --ac-color-600: var(--ac-gray-500);
-  --ac-color-700: var(--ac-dark);
-}
-`
-const darkModeVariables = `
-.dark,
-[data-theme='dark'] {
-  color-scheme: dark;
-  --ac-color-100: var(--ac-dark);
-  --ac-color-200: var(--ac-gray-500);
-  --ac-color-300: var(--ac-gray-400);
-  --ac-color-400: var(--ac-gray-300);
-  --ac-color-500: var(--ac-gray-200);
-  --ac-color-600: var(--ac-gray-100);
-  --ac-color-700: var(--ac-white);
-}
-`
-const examplesCodes = `
-body {
-  background-color: rgb(var(--ac-color-100));
-  color: rgb(var(--ac-color-700));
-}
+import Link from '../../components/Link.astro'
 
-.card {
-  background-color: rgb(var(--ac-color-200));
-  border: 1px solid rgb(var(--ac-color-300));
-}
-
-.button {
-  background-color: rgb(var(--ac-primary));
-  color: rgb(var(--ac-white));
-}
-`
 ---
 
 <Layout title="Stellar en Español - Colors">
@@ -85,79 +27,100 @@ body {
           level={1}
           gradient
           class="inline-block"
-          text="Rust"
+          text=" 🦀 Rust"
         />
         <Prose>
-          <Text>
-            This section describes the CSS variables that define the color
-            palette used in the components. It also explains how light and dark
-            modes are implemented to enhance user experience.
-          </Text>
+         
+
+          <Text>Rust es el lenguaje de propósito general en el cual se escriben los contratos para la red de Stellar a continuación un paso a paso para su instalación.</Text>
+        
+        <Text>Para la instalación de rust, dirigirse a este enlace: <Link href="https://www.rust-lang.org/" target="_blank">Rust</Link></Text>
+          
+
         </Prose>
         <Prose>
-          <Heading level={2} text="Color Variables" />
-          <Heading level={3} text="Base Variables" />
+          <Heading level={3} text="Instalación en macOS y Linux" />
+
+          <Heading level={4} text="Abrir la Terminal" />
+
+       <Text>Abre tu aplicación de terminal (Terminal.app en macOS o la terminal de tu distribución Linux).</Text>
           <Text>
-            These variables are used to define primary, secondary, dark, and
-            neutral colors. They are applied consistently across the project to
-            maintain a coherent visual identity.
-          </Text>
-          <Heading level={4} text="Variables" />
-          <CodeBlock lang="css" code={colorVariables} />
+       
+          <Heading level={4} text="Descargar e instalar Rust con rustup" />
+          <CodeBlock lang="css" code={RustLinux} />
         </Prose>
         <Prose>
-          <Heading level={2} text="Color Modes" />
+          <Heading level={4} text="Configurar el entorno" />
           <Text>
-            To enhance user experience, we use light and dark color modes that
-            adjust automatically based on user preferences or system settings.
-            This is achieved using specific classes and data attributes to
-            determine the current theme.
+            Una vez finalizada la instalación, cierra y vuelve a abrir la terminal o ejecuta:
           </Text>
-          <Heading level={3} text="Light Mode" />
-          <CodeBlock lang="css" code={lightModeVariables} />
+          <CodeBlock lang="css" code={Paso3Rust} />
+          <Text>Esto garantiza que el directorio de Cargo (donde se instalan las herramientas, por ejemplo, <code >rustc</code>, <code> cargo</code> y <code>rustup</code>) se añada a tu variable de entorno <code>PATH</code>.
+            
+          </Text>
+          <Heading level={4} text="Verificar la instalación" />
+          <Text>Para verificar la instalación, ejecuta:</Text>
+          <CodeBlock lang="css" code={Paso4Rust} />
+          
+          <Heading level={4} text="Agregamos el siguiente paquete" />
+          <CodeBlock lang="css" code={Paso5Rust} />
+
+
+          <Heading level={4} text="Instalar un compilador de C (si es necesario)" />
+          <Text>Rust requiere un enlazador para compilar correctamente:</Text>
+          
           <List>
             <ListItem>
               <Text>
-                <strong>Description</strong>: In light mode, we use lighter
-                colors for backgrounds and primary elements, while text and
-                prominent elements are darker.
+                <strong>
+                  En macOS</strong>: Instala las herramientas de línea de comandos de Xcode
               </Text>
+              <CodeBlock lang="css" code={Paso6Rust} />
             </ListItem>
             <ListItem>
               <Text>
-                <strong>Color Variables</strong>: Variables <code
-                  >--ac-color-100</code
-                > to <code>--ac-color-700</code> are mapped to lighter colors, ending
-                with <code>--ac-dark</code> for text and important elements.
+                <strong>Linux: Debian - Ubuntu </strong>
+                
               </Text>
+              <CodeBlock lang="css" code={Paso7Rust} />
+            </ListItem>
+
+            <ListItem>
+              <Text>
+                <strong>Linux: Fedora</strong>
+               
+              </Text>
+              <CodeBlock lang="css" code={Paso8Rust} />
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Linux: Arch Linux</strong>
+               
+              </Text>
+              <CodeBlock lang="css" code={Paso9Rust} />
             </ListItem>
           </List>
-          <Heading level={3} text="Dark Mode" />
-          <CodeBlock lang="css" code={darkModeVariables} />
-          <List>
-            <ListItem>
-              <Text>
-                <strong>Description</strong>: In dark mode, we use darker colors
-                for backgrounds and lighter colors for text and highlighted
-                elements, reducing visual fatigue in low-light environments.
-              </Text>
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>Color Variables</strong>: Variables <code
-                  >--ac-color-100</code
-                > to <code>--ac-color-700</code> are inverted compared to light mode,
-                starting with <code>--ac-dark</code> and ending with <code
-                  >--ac-white</code
-                > for text and important elements.
-              </Text>
-            </ListItem>
-          </List>
+
+
+
         </Prose>
         <Prose>
-          <Heading level={2} text="Usage Examples" />
-          <Heading level={3} text="General Styles" />
-          <CodeBlock lang="css" title="css" code={examplesCodes} />
+          <Heading level={3} text="Instalación en Windows" />
+          <Heading level={4} text="Descargar el instalador" />
+          <Text>Visita la <Link href="https://www.rust-lang.org/">página oficial de Rust</Link> y descarga el instalador para Windows (rustup-init.exe). Elige la versión de 32 o 64 bits según tu sistema.</Text>
+          
+          <Heading level={4} text=" Ejecutar el instalador" />
+          <Text>Ejecuta el archivo descargado y sigue las instrucciones en pantalla. Durante la instalación, es posible que se te pida instalar las Visual Studio C++ Build Tools (necesarias para compilar Rust en Windows).</Text>
+         
+         <img src="https://soroban-en-espanol.gitbook.io/~gitbook/image?url=https%3A%2F%2F4030095675-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FtbyfkjBGlvJb3cEGvvm8%252Fuploads%252FtQckmd1B9Gov4SttF2iR%252Fimage.png%3Falt%3Dmedia%26token%3D931a707a-4b48-495b-8494-68907a03c723&width=768&dpr=1&quality=100&sign=99b7dd8c&sv=2" alt="rust1" />
+         
+         <Heading level={4} text=" Verificar la instalación" />
+         <Text>Abre una terminal (CMD o PowerShell) y ejecuta:</Text>
+         <CodeBlock lang="css" code={Paso4Rust} />
+
+         <Heading level={4} text="Agregamos los siguientes paquetes" />
+         <CodeBlock lang="css" code={Paso10Rust} />
+         
         </Prose>
       </Article>
     </section>
